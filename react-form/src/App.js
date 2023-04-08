@@ -39,7 +39,7 @@ function App() {
 
   return (
     <div className="App">
-      {result !== "success" && (
+      {result !== "success" ? (
         <form id="form" onSubmit={handleFormSubmit}>
           <h2>City quiz</h2>
           <p>What city is located on two continents?</p>
@@ -58,8 +58,9 @@ function App() {
             {result}
           </p>
         </form>
+      ) : (
+        <h1 id="success">That's right!</h1>
       )}
-      {result == "success" && <h1 id="success">That's right!</h1>}
     </div>
   );
 }
